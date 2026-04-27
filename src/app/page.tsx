@@ -43,9 +43,9 @@ export default function Home() {
       {/* Nav */}
       <nav className="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-black/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-8 h-16 flex items-center justify-between">
-          <span className="text-amber-500 font-bold tracking-widest text-xs uppercase">
+          <a href="/" className="text-amber-500 font-bold tracking-widest text-xs uppercase hover:text-amber-400 transition-colors">
             Specter &amp; Associates
-          </span>
+          </a>
           <div className="hidden md:flex items-center gap-10 text-xs uppercase tracking-widest text-zinc-400">
             <a href="#about" className="hover:text-white transition-colors">About</a>
             <a href="#practice" className="hover:text-white transition-colors">Practice</a>
