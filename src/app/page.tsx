@@ -11,6 +11,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
+    <>
     <section className="font-inter relative h-screen overflow-hidden bg-[#fafafa] flex flex-col">
       {/* Background photo — full cover, centered, no resize gaps */}
       <img
@@ -149,5 +150,63 @@ export default function Home() {
         </div>
       </div>
     </section>
+
+    {/* About section */}
+    <section className="font-inter bg-white w-full px-6 md:px-8 py-12 md:py-[7.5rem]">
+      <div className="w-full max-w-[110rem] mx-auto flex flex-col gap-6">
+
+        {/* [ 8+ years in industry ] + divider */}
+        <div className="flex flex-col gap-3 items-end">
+          <p className="font-mono text-[0.875rem] text-[#1f1f1f] uppercase leading-[1.1] text-right">
+            [ 8+ years in industry ]
+          </p>
+          <div className="w-full h-px bg-[#1f1f1f]" />
+        </div>
+
+        {/* Staggered display type */}
+        <div className="flex flex-col gap-2 uppercase">
+
+          {/* 001 label — mobile only, above first line */}
+          <p className="md:hidden font-mono text-[0.875rem] text-[#1f1f1f] leading-[1.1] text-center">001</p>
+
+          {/* Line 1: A creative director / */}
+          <div className="flex items-start gap-3 justify-center md:justify-start">
+            <p className="font-light text-black text-[clamp(2rem,6.7vw,6rem)] leading-[0.84] tracking-[-0.08em] whitespace-nowrap">
+              A creative director&nbsp;&nbsp;&nbsp;/
+            </p>
+            <span className="hidden md:block font-mono text-[0.875rem] text-[#1f1f1f] leading-[1.1] mt-1 shrink-0">001</span>
+          </div>
+
+          {/* Line 2: Photographer — ~15% indent desktop (214px / 1440px canvas) */}
+          <p className="font-light text-black text-[clamp(2rem,6.7vw,6rem)] leading-[0.84] tracking-[-0.08em] whitespace-nowrap text-center md:text-left md:pl-[15%]">
+            Photographer
+          </p>
+
+          {/* Line 3: Born & raised — ~42% indent desktop (610px / 1440px canvas) */}
+          <p className="font-light text-black text-[clamp(2rem,6.7vw,6rem)] leading-[0.84] tracking-[-0.08em] whitespace-nowrap text-center md:text-left md:pl-[42%]">
+            Born{" "}
+            <span style={{ fontFamily: "var(--font-playfair)", fontStyle: "italic", fontWeight: "400" }}>&amp;</span>
+            {" "}raised
+          </p>
+
+          {/* Line 4: On the south side — left aligned */}
+          <p className="font-light text-black text-[clamp(2rem,6.7vw,6rem)] leading-[0.84] tracking-[-0.08em] whitespace-nowrap text-center md:text-left">
+            on the south side
+          </p>
+
+          {/* Line 5: Of Chicago — ~42% indent desktop */}
+          <p className="font-light text-black text-[clamp(2rem,6.7vw,6rem)] leading-[0.84] tracking-[-0.08em] whitespace-nowrap text-center md:text-left md:pl-[42%]">
+            of chicago.
+          </p>
+
+        </div>
+
+        {/* [ creative freelancer ] — below the text block */}
+        <p className="font-mono text-[0.875rem] text-[#1f1f1f] leading-[1.1] whitespace-nowrap text-center md:text-left">
+          [ CREATIVE FREELANCER ]
+        </p>
+      </div>
+    </section>
+    </>
   );
 }
