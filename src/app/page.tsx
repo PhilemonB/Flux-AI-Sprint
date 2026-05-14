@@ -202,9 +202,76 @@ export default function Home() {
         </div>
 
         {/* [ creative freelancer ] — below the text block */}
-        <p className="font-mono text-[0.875rem] text-[#1f1f1f] leading-[1.1] whitespace-nowrap text-center md:text-left">
+        <p className="font-mono text-[0.875rem] text-[#1f1f1f] leading-[1.1] whitespace-nowrap text-center md:text-right">
           [ CREATIVE FREELANCER ]
         </p>
+      </div>
+    </section>
+
+    {/* Section 002 — About */}
+    <section className="font-inter bg-white w-full px-6 md:px-8 py-12 md:py-20">
+      <div className="w-full max-w-[110rem] mx-auto">
+
+        {/* Mobile layout */}
+        <div className="flex flex-col gap-5 md:hidden">
+          <p className="font-mono text-[0.875rem] text-[#1f1f1f] uppercase leading-[1.1]">002</p>
+          <p className="font-mono text-[0.875rem] text-[#1f1f1f] uppercase leading-[1.1]">[ About ]</p>
+          <div className="flex items-stretch gap-3">
+            <div className="flex flex-col justify-between shrink-0">
+              <div className="w-4 h-4 border-t border-l border-[#1f1f1f]" />
+              <div className="w-4 h-4 border-b border-l border-[#1f1f1f]" />
+            </div>
+            <p className="flex-1 text-[0.875rem] text-[#1f1f1f] leading-[1.3] tracking-[-0.04em] py-3">
+              Placeholder paragraph one. This is where you introduce yourself — your background, your passion for your craft, and what drives you creatively. Two to three sentences work best here. Placeholder paragraph two. Here you can describe your technical approach, how you collaborate with clients, or what sets your work apart from others in your field.
+            </p>
+            <div className="flex flex-col justify-between shrink-0">
+              <div className="w-4 h-4 border-t border-r border-[#1f1f1f]" />
+              <div className="w-4 h-4 border-b border-r border-[#1f1f1f]" />
+            </div>
+          </div>
+          <div className="w-full aspect-[422/594] overflow-hidden relative">
+            <img
+              src="https://www.figma.com/api/mcp/asset/fc81c8e9-e261-4b98-b325-ed5619b5bdad"
+              alt="Portrait"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        {/* Desktop layout */}
+        <div className="hidden md:flex items-stretch justify-between gap-8">
+          {/* Left column: [ About ] at top, text block at bottom */}
+          <div className="flex flex-col justify-between flex-1 min-w-0">
+            <p className="font-mono text-[0.875rem] text-[#1f1f1f] uppercase leading-[1.1]">
+              [ About ]
+            </p>
+            <div className="flex items-stretch gap-3 max-w-[35rem] ml-auto">
+              <div className="flex flex-col justify-between shrink-0">
+                <div className="w-4 h-4 border-t border-l border-[#1f1f1f]" />
+                <div className="w-4 h-4 border-b border-l border-[#1f1f1f]" />
+              </div>
+              <p className="flex-1 text-[0.875rem] text-[#1f1f1f] leading-[1.3] tracking-[-0.04em] py-3">
+                Placeholder paragraph one. This is where you introduce yourself — your background, your passion for your craft, and what drives you creatively. Two to three sentences work best here. Placeholder paragraph two. Here you can describe your technical approach, how you collaborate with clients, or what sets your work apart from others in your field.
+              </p>
+              <div className="flex flex-col justify-between shrink-0">
+                <div className="w-4 h-4 border-t border-r border-[#1f1f1f]" />
+                <div className="w-4 h-4 border-b border-r border-[#1f1f1f]" />
+              </div>
+            </div>
+          </div>
+          {/* Right column: 002 + Portrait */}
+          <div className="flex gap-6 items-start shrink-0">
+            <p className="font-mono text-[0.875rem] text-[#1f1f1f] leading-[1.1]">002</p>
+            <div className="w-[30vw] max-w-[436px] aspect-[422/594] overflow-hidden relative">
+              <img
+                src="https://www.figma.com/api/mcp/asset/fc81c8e9-e261-4b98-b325-ed5619b5bdad"
+                alt="Portrait"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
     </>
