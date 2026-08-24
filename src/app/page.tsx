@@ -12,58 +12,34 @@ const services = [
     name: "Brand Discovery",
     description:
       "Placeholder description of this service. Explain the value you provide and the outcomes clients can expect. Keep it to two or three sentences.",
-    image: "https://www.figma.com/api/mcp/asset/e7f93af3-42ec-4266-91c6-e7e3e716c2ee",
+    image: "/brand discovery.png",
   },
   {
     name: "Web Design & Dev",
     description:
       "Placeholder description of this service. Explain the value you provide and the outcomes clients can expect. Keep it to two or three sentences.",
-    image: "https://www.figma.com/api/mcp/asset/a91471df-0caf-4ba7-93a3-38b69bd3c888",
+    image: "/web design dev.png",
   },
   {
     name: "Marketing",
     description:
       "Placeholder description of this service. Explain the value you provide and the outcomes clients can expect. Keep it to two or three sentences.",
-    image: "https://www.figma.com/api/mcp/asset/b89362bc-51ce-48c3-adc7-4f9f9e34681a",
+    image: "/marketing.png",
   },
   {
     name: "Photography",
     description:
       "Placeholder description of this service. Explain the value you provide and the outcomes clients can expect. Keep it to two or three sentences.",
-    image: "https://www.figma.com/api/mcp/asset/54dec186-0bb8-4264-b9c9-d8578e010994",
+    image: "/photography.png",
   },
 ];
 
 const projects = [
-  {
-    title: "Surfers Paradise",
-    tags: ["Social Media", "Photography"],
-    image: "https://www.figma.com/api/mcp/asset/86b0b7a8-39db-4e45-af2e-ccdc07209290",
-  },
-  {
-    title: "Cyberpunk Caffe",
-    tags: ["Social Media", "Photography"],
-    image: "https://www.figma.com/api/mcp/asset/8c51dc89-fba2-405f-af75-457a713e454a",
-  },
-  {
-    title: "Agency 976",
-    tags: ["Social Media", "Photography"],
-    image: "https://www.figma.com/api/mcp/asset/fad95639-835b-4cf9-8fe6-7b4c6d4e47b5",
-  },
-  {
-    title: "Minimal Playground",
-    tags: ["Social Media", "Photography"],
-    image: "https://www.figma.com/api/mcp/asset/70213a53-d41f-4bd5-ac0b-b039d29cc9cb",
-  },
+  { title: "Surfers Paradise", tags: ["Social Media", "Photography"], image: "/surfers paradise.png" },
+  { title: "Cyberpunk Caffe", tags: ["Social Media", "Photography"], image: "/cyberpunk.png" },
+  { title: "Agency 976", tags: ["Social Media", "Photography"], image: "/agency 976.png" },
+  { title: "Minimal Playground", tags: ["Social Media", "Photography"], image: "/minimal playground.png" },
 ];
-
-const portfolioArrow = "https://www.figma.com/api/mcp/asset/ad672a00-21d6-47ea-9ca6-605da45bc450";
-const cornerAssets = {
-  tl: "https://www.figma.com/api/mcp/asset/6159a28d-8a60-4f70-a7db-bfd474189ac0",
-  bl: "https://www.figma.com/api/mcp/asset/771e764c-d1b7-4ab7-8abd-7c416d435b55",
-  tr: "https://www.figma.com/api/mcp/asset/5d2329d9-3c59-4bac-b527-35c7d3755767",
-  br: "https://www.figma.com/api/mcp/asset/c9387502-7e30-4743-81a0-81e862c5a9e4",
-};
 
 function ProjectCard({ title, tags, image, heightClass }: {
   title: string;
@@ -74,10 +50,10 @@ function ProjectCard({ title, tags, image, heightClass }: {
   return (
     <div className="flex flex-col gap-[10px]">
       <div className={`relative w-full ${heightClass} overflow-hidden`}>
-        <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover" />
+        <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover object-top" />
         <div className="absolute bottom-4 left-4 flex gap-3">
           {tags.map((tag) => (
-            <span key={tag} className="backdrop-blur-sm bg-white/30 px-2 py-1 rounded-full text-[0.875rem] font-medium text-[#111] tracking-[-0.035em] whitespace-nowrap">
+            <span key={tag} className="backdrop-blur-[10px] bg-white/30 px-2 py-1 rounded-full text-[0.875rem] font-medium text-[#111] tracking-[-0.035em] whitespace-nowrap">
               {tag}
             </span>
           ))}
@@ -85,8 +61,10 @@ function ProjectCard({ title, tags, image, heightClass }: {
       </div>
       <div className="flex items-center justify-between">
         <p className="font-black uppercase text-black tracking-[-0.04em] leading-[1.1] text-[1.5rem] md:text-[2.25rem]">{title}</p>
-        <div className="flex items-center justify-center w-8 h-8 shrink-0">
-          <img src={portfolioArrow} alt="" className="w-8 h-8 -rotate-90" />
+        <div className="flex items-center justify-center shrink-0 size-8">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 23L23 9M23 9H13M23 9V19" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
         </div>
       </div>
     </div>
@@ -97,8 +75,8 @@ function CtaBox() {
   return (
     <div className="flex gap-3 items-stretch">
       <div className="flex flex-col justify-between w-6 shrink-0">
-        <img src={cornerAssets.tl} alt="" className="w-4 h-4" />
-        <img src={cornerAssets.bl} alt="" className="w-4 h-4 -rotate-90" />
+        <div className="w-4 h-4 border-t border-l border-[#1f1f1f]" />
+        <div className="w-4 h-4 border-b border-l border-[#1f1f1f]" />
       </div>
       <div className="flex flex-col gap-[10px] flex-1 min-w-0 py-3">
         <p className="text-[0.875rem] text-[#1f1f1f] italic leading-[1.3] tracking-[-0.035em]">
@@ -109,8 +87,8 @@ function CtaBox() {
         </button>
       </div>
       <div className="flex flex-col justify-between items-end w-6 shrink-0">
-        <img src={cornerAssets.tr} alt="" className="w-4 h-4 rotate-90" />
-        <img src={cornerAssets.br} alt="" className="w-4 h-4 rotate-180" />
+        <div className="w-4 h-4 border-t border-r border-[#1f1f1f]" />
+        <div className="w-4 h-4 border-b border-r border-[#1f1f1f]" />
       </div>
     </div>
   );
@@ -121,28 +99,28 @@ function CtaBox() {
 // leftEm = (card_x - 150) / 198,  topEm = (card_y - 384) / 198
 const testimonials = [
   {
-    logo: { src: "https://www.figma.com/api/mcp/asset/efa8133e-f833-4db5-9871-f0286a3b943d", w: 143, h: 19 },
+    logo: { src: "/testimonial marko logo.png", w: 143, h: 19 },
     quote: "A brilliant creative partner who transformed our vision into a unique, high-impact brand identity. Their ability to craft everything from custom mascots to polished logos is truly impressive.",
     author: "Marko Stojković",
     desktop: { leftEm: -0.24, topEm: -1.22, rotate: "-6.85deg", zClass: "z-20" },
     mobileRotate: "-3.5deg",
   },
   {
-    logo: { src: "https://www.figma.com/api/mcp/asset/b7f7c7bc-7842-42a2-894b-41e071e352f5", w: 138, h: 19 },
+    logo: { src: "/testimonial lukas logo.png", w: 138, h: 19 },
     quote: "Professional, precise, and incredibly fast at handling complex product visualizations and templates.",
     author: "Lukas Weber",
     desktop: { leftEm: 2.66, topEm: -0.57, rotate: "2.9deg", zClass: "z-0" },
     mobileRotate: "2deg",
   },
   {
-    logo: { src: "https://www.figma.com/api/mcp/asset/4797a220-7726-47db-806b-e993fa6131a9", w: 109, h: 31 },
+    logo: { src: "/testimonial sarah logo.png", w: 109, h: 31 },
     quote: "A strategic partner who balances stunning aesthetics with high-performance UX for complex platforms. They don't just make things look good; they solve business problems through visual clarity.",
     author: "Sarah Jenkins",
     desktop: { leftEm: 0.78, topEm: 0.85, rotate: "2.23deg", zClass: "z-20" },
     mobileRotate: "-3.5deg",
   },
   {
-    logo: { src: "https://www.figma.com/api/mcp/asset/7abfbb19-2897-4642-841d-de430ca282e9", w: 81, h: 36 },
+    logo: { src: "/testimonial sofia logo.png", w: 81, h: 36 },
     quote: "An incredibly versatile designer who delivers consistent quality across a wide range of styles and formats.",
     author: "Sofia Martínez",
     desktop: { leftEm: 4.23, topEm: 0.82, rotate: "-4.15deg", zClass: "z-20" },
@@ -151,11 +129,11 @@ const testimonials = [
 ];
 
 const newsItems = [
-  { image: "https://www.figma.com/api/mcp/asset/43384be8-dceb-47f9-931d-a6ec0955dfe7" },
-  { image: "https://www.figma.com/api/mcp/asset/c9673ae6-86fc-4409-ab0d-aa004925b99d" },
-  { image: "https://www.figma.com/api/mcp/asset/3c71bd9c-7e05-40c8-876a-fb903573a504" },
+  { image: "/post #1 img.png" },
+  { image: "/post #2 img.png" },
+  { image: "/post #3 img.png" },
 ];
-const newsArrow = "https://www.figma.com/api/mcp/asset/f0452c25-e819-4e0a-ad5d-cc23775ef78f";
+const newsArrow = "/top right arrow black.png";
 
 function TestimonialCard({
   logo,
@@ -170,7 +148,9 @@ function TestimonialCard({
 }) {
   return (
     <div className={`bg-[#f1f1f1] border border-[#ddd] rounded-[4px] p-6 flex flex-col gap-4 ${widthClass}`}>
-      <img src={logo.src} alt="" style={{ width: logo.w, height: logo.h, objectFit: "contain" }} />
+      <div className="relative shrink-0" style={{ width: logo.w, height: logo.h }}>
+        <img src={logo.src} alt="" className="absolute inset-0 w-full h-full object-contain object-left" />
+      </div>
       <p className="text-[1.125rem] text-[#1f1f1f] leading-[1.3] tracking-[-0.04em]">{quote}</p>
       <p className="font-black text-[1rem] text-black tracking-[-0.04em] uppercase leading-[1.1]">{author}</p>
     </div>
@@ -273,7 +253,7 @@ export default function Home() {
               H.Studio
             </Link>
 
-            <div className="hidden md:flex items-center gap-14 font-semibold text-[1rem] tracking-[-0.04em] text-black capitalize">
+            <div className="nav_menu">
               {navLinks.map((link) => (
                 <a
                   key={link}
@@ -423,7 +403,7 @@ export default function Home() {
           </div>
           <div className="w-full aspect-[422/594] overflow-hidden relative">
             <img
-              src="https://www.figma.com/api/mcp/asset/fc81c8e9-e261-4b98-b325-ed5619b5bdad"
+              src="/about img.png"
               alt="Portrait"
               className="absolute inset-0 w-full h-full object-cover"
             />
@@ -456,7 +436,7 @@ export default function Home() {
             <p className="font-mono text-[0.875rem] text-[#1f1f1f] leading-[1.1]">002</p>
             <div className="w-[30vw] max-w-[436px] aspect-[422/594] overflow-hidden relative">
               <img
-                src="https://www.figma.com/api/mcp/asset/fc81c8e9-e261-4b98-b325-ed5619b5bdad"
+                src="/about img.png"
                 alt="Portrait"
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -469,7 +449,7 @@ export default function Home() {
     {/* Full-bleed photo section */}
     <section className="font-inter w-full h-screen max-h-[35.3125rem] md:max-h-[56.25rem] overflow-hidden relative">
       <img
-        src="https://www.figma.com/api/mcp/asset/2b1de1c4-8050-4e98-8530-199cd260b530"
+        src="/photographer at work.png"
         alt="Photographer at work"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none"
       />
@@ -566,12 +546,12 @@ export default function Home() {
 
         {/* Desktop: two columns, right offset 240px */}
         <div className="hidden md:flex gap-6 items-end">
-          <div className="flex-1 flex flex-col gap-[7.3125rem]">
+          <div className="flex-1 self-stretch flex flex-col justify-between">
             <ProjectCard {...projects[0]} heightClass="h-[744px]" />
             <ProjectCard {...projects[1]} heightClass="h-[699px]" />
             <CtaBox />
           </div>
-          <div className="flex-1 flex flex-col gap-[7.3125rem] pt-[240px]">
+          <div className="flex-1 flex flex-col gap-[117px] pt-[240px]">
             <ProjectCard {...projects[2]} heightClass="h-[699px]" />
             <ProjectCard {...projects[3]} heightClass="h-[744px]" />
           </div>
@@ -682,6 +662,70 @@ export default function Home() {
       </div>
 
     </section>
+
+    {/* Footer */}
+    <footer id="contact" className="font-inter bg-black w-full px-6 md:px-8 pt-12">
+      <div className="w-full max-w-[110rem] mx-auto flex flex-col gap-12 md:gap-[7.5rem]">
+
+        {/* Contact + social links */}
+        <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+          <div className="flex flex-col gap-3 items-start w-full md:w-[18.625rem]">
+            <p className="italic font-light text-white uppercase text-[1.5rem] leading-[1.1] tracking-[-0.04em]">
+              Have a <span className="font-black not-italic">project</span> in mind?
+            </p>
+            <button className="border border-white text-white text-[0.875rem] font-medium tracking-[-0.04em] px-4 py-3 rounded-full hover:bg-white hover:text-black transition-colors">
+              Let&apos;s talk
+            </button>
+          </div>
+
+          <div className="flex justify-between gap-6 md:contents">
+            <div className="font-normal text-white uppercase text-[1.125rem] tracking-[-0.04em] leading-[1.1] md:w-[18.625rem] md:text-center">
+              <p>Facebook</p>
+              <p>Instagram</p>
+            </div>
+            <div className="font-normal text-white uppercase text-[1.125rem] tracking-[-0.04em] leading-[1.1] text-right md:w-[18.625rem]">
+              <p>x.com</p>
+              <p>Linkedin</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="w-full h-px bg-white" />
+
+        {/* Wordmark + legal links */}
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <div className="flex items-end gap-6">
+            {/* Vertical label: fixed real box, so the rotated glyph paint never
+                escapes past a laid-out edge (rotate doesn't resize the box). */}
+            <div className="hidden lg:flex shrink-0 overflow-hidden items-center justify-center w-4 h-[12rem]">
+              <p className="-rotate-90 flex-none whitespace-nowrap font-mono text-[0.875rem] text-white uppercase leading-[1.1]">
+                [ Coded By Claude ]
+              </p>
+            </div>
+
+            {/* Wordmark: font-size set on this box so h-[0.75em] is a real,
+                laid-out crop line — overflow-hidden contains the bleed instead
+                of letting it paint past the document's bottom edge. */}
+            <div className="shrink-0 relative overflow-hidden flex items-center pr-[0.04em] text-[clamp(3rem,17vw,18.125rem)] h-[0.75em]">
+              <p className="font-semibold capitalize text-white leading-[0.8] tracking-[-0.06em] whitespace-nowrap">
+                H.Studio
+              </p>
+            </div>
+          </div>
+
+          <div className="flex gap-8 items-center shrink-0 self-start lg:self-end pb-8">
+            <a href="#" className="text-[0.75rem] text-white tracking-[-0.04em] uppercase underline underline-offset-2 hover:opacity-60 transition-opacity">
+              Licences
+            </a>
+            <a href="#" className="text-[0.75rem] text-white tracking-[-0.04em] uppercase underline underline-offset-2 hover:opacity-60 transition-opacity">
+              Privacy policy
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
     </>
   );
 }
