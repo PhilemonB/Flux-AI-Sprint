@@ -26,3 +26,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer components {
+  .nav_menu { @apply hidden md:flex items-center gap-14 font-semibold text-[1rem] tracking-[-0.04em] text-black capitalize; }
+}
